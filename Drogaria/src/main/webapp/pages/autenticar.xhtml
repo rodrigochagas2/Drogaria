@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Autenticação</title>
+	<p:growl id="mensagem" />
+</h:head>
+<h:body>
+
+	<p:dialog closable="false" header="Autenticação" resizable="false"
+		visible="true">
+		<h:form id="formulario">
+			<h:panelGrid columns="2">
+				<p:outputLabel for="cpf" value="cpf:" />
+				<p:inputMask id="cpf" mask="999.999.999-99" size="20"
+					required="true" requiredMessage="O campo 'cpf' é obrigatório"
+					value="#{autenticacaoBean.usuario.pessoa.cpf}"/>
+
+				<p:outputLabel for="senha" value="Senha" />
+				<p:password id="senha" maxlength="8" size="20" required="true"
+					requiredMessage="O campo 'Senha' é obrigatório"
+					value="#{autenticacaoBean.usuario.senha}" />
+			</h:panelGrid>
+			<h:panelGrid columns="1">
+				<p:commandButton value="Entrar" update="mensagem"
+					actionListener="#{autenticacaoBean.autenticar}" />
+			</h:panelGrid>
+
+		</h:form>
+
+	</p:dialog>
+</h:body>
+
+
+
+
+</html>

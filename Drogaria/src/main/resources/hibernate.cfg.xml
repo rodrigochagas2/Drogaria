@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	
+   		<property name="connection.url">jdbc:postgresql://node170652-env-4985206.jelasticlw.com.br/drogaria</property> <!-- BD Mane -->
+   		<property name="connection.driver_class">org.postgresql.Driver</property> <!-- DB Driver -->
+   		<property name="connection.username">webadmin</property> <!-- DB User -->
+   		<property name="connection.password">FYPila75187</property> <!-- DB Password -->
+   		
+   		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> <!-- DB Dialect -->
+   		<property name="hbm2ddl.auto">update</property> <!-- create / create-drop / update -->
+		
+		<property name="show_sql">true</property> <!-- Show SQL in console -->
+		<property name="format_sql">true</property> <!-- Show SQL formatted -->
+		
+		<!-- Mapeamento das Entidades -->
+		<mapping class="br.com.drogaria.domain.Estado"/>
+		<mapping class="br.com.drogaria.domain.Fabricante"/>
+		<mapping class="br.com.drogaria.domain.Cidade"/>
+		<mapping class="br.com.drogaria.domain.Produto"/>
+		<mapping class="br.com.drogaria.domain.Pessoa"/>
+		<mapping class="br.com.drogaria.domain.Cliente"/>
+		<mapping class="br.com.drogaria.domain.Funcionario"/>
+		<mapping class="br.com.drogaria.domain.Usuario"/>
+		<mapping class="br.com.drogaria.domain.Venda"/>
+		<mapping class="br.com.drogaria.domain.ItemVenda"/>
+		<mapping class="br.com.drogaria.domain.Historico"/>
+		<mapping class="br.com.drogaria.domain.Caixa"/>
+		<mapping class="br.com.drogaria.domain.Movimentacao"/>
+		
+	</session-factory>
+</hibernate-configuration>

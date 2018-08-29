@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="estados" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1555361d-1a5c-4e23-9460-21e400ed9267">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="433"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="554"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Drogaria Data Adapter "/>
+	<parameter name="ESTADO_NOME" class="java.lang.String"/>
+	<parameter name="ESTADO_SIGLA" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT estado.nome,
+	estado.sigla
+FROM estado
+WHERE 
+	 estado.nome LIKE $P{ESTADO_NOME} 
+	 AND estado.sigla LIKE $P{ESTADO_SIGLA} 
+ORDER BY estado.nome ASC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estado"/>
+	</field>
+	<field name="sigla" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sigla"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estado"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="60" y="0" width="440" height="80" uuid="92899655-e29f-461a-973c-a96bf011ea3b"/>
+				<imageExpression><![CDATA["banner.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="0" width="595" height="48" uuid="17cabc59-52a8-48fb-b778-bd19244f0cf7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Estados]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="6b506b2d-27c9-4654-8a78-e05124819fc4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="19a0064a-9143-455d-a1a5-573fea93b909"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="30" uuid="8eb37a0a-12cc-41b7-92c5-5edf1992bd30">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a8caca2-fe05-45a6-9db7-973e79f53f55"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sigla]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="b48b8198-a31b-4795-9568-8bbfaa9757f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="19a0064a-9143-455d-a1a5-573fea93b909"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="30" uuid="6ba83a9d-4345-4ea3-9c65-547ea695c412">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3a8caca2-fe05-45a6-9db7-973e79f53f55"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sigla}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="53">
+			<staticText>
+				<reportElement x="-20" y="0" width="595" height="53" uuid="c7acc664-4f85-4d81-9352-254d29d021dd"/>
+				<box>
+					<topPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rua: Francisco Carlos Martins, 900,vila:Furini,15990-312, Matão - SP]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
